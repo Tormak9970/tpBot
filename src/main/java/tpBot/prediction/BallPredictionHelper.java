@@ -1,9 +1,9 @@
-package rlbotexample.prediction;
+package tpBot.prediction;
 
 import rlbot.flat.BallPrediction;
 import rlbot.flat.PredictionSlice;
 import rlbot.render.Renderer;
-import rlbotexample.vector.Vector3;
+import tpBot.vector.Vec3;
 
 import java.awt.*;
 
@@ -14,13 +14,13 @@ import java.awt.*;
 public class BallPredictionHelper {
 
     public static void drawTillMoment(BallPrediction ballPrediction, float gameSeconds, Color color, Renderer renderer) {
-        Vector3 previousLocation = null;
+        Vec3 previousLocation = null;
         for (int i = 0; i < ballPrediction.slicesLength(); i += 4) {
             PredictionSlice slice = ballPrediction.slices(i);
             if (slice.gameSeconds() > gameSeconds) {
                 break;
             }
-            Vector3 location = new Vector3(slice.physics().location());
+            Vec3 location = new Vec3(slice.physics().location());
             if (previousLocation != null) {
                 renderer.drawLine3d(color, previousLocation, location);
             }

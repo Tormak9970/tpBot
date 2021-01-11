@@ -1,8 +1,8 @@
-package rlbotexample.input;
+package tpBot.input;
 
 import rlbot.flat.GameTickPacket;
-import rlbotexample.input.ball.BallData;
-import rlbotexample.input.car.CarData;
+import tpBot.input.ball.BallData;
+import tpBot.input.car.CarData;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +24,10 @@ public class DataPacket {
     public final BallData ball;
     public final int team;
 
+    public final boolean isKickoff;
+    public final double time;
+    public final double timeRemaining;
+
     /** The index of your player */
     public final int playerIndex;
 
@@ -36,6 +40,10 @@ public class DataPacket {
         for (int i = 0; i < request.playersLength(); i++) {
             allCars.add(new CarData(request.players(i), request.gameInfo().secondsElapsed()));
         }
+
+        isKickoff = request.gameInfo().isKickoffPause() && ball.position.flatten().isZero();
+        time = request.gameInfo().secondsElapsed();
+        timeRemaining = request.gameInfo().gameTimeRemaining();
 
         this.car = allCars.get(playerIndex);
         this.team = this.car.team;

@@ -17,7 +17,7 @@ open and it's OK if it says something like "75%".
 1. Use Add -> Load folder in RLBotGUI on the current directory. This bot should appear in the list.
 1. In RLBotGUI, put the bot on a team and start the match.
 
-- Bot behavior is controlled by `src/main/java/rlbotexample/SampleBot.java`
+- Bot behavior is controlled by `src/main/java/tpBot/SampleBot.java`
 
 See the [wiki](https://github.com/RLBot/RLBotJavaExample/wiki)
 for tips to improve your programming experience.

@@ -1,7 +1,7 @@
-package rlbotexample.input.car;
+package tpBot.input.car;
 
 
-import rlbotexample.vector.Vector3;
+import tpBot.vector.Vec3;
 
 /**
  * Basic information about the car.
@@ -12,10 +12,12 @@ import rlbotexample.vector.Vector3;
 public class CarData {
 
     /** The location of the car on the field. (0, 0, 0) is center field. */
-    public final Vector3 position;
+    public final Vec3 position;
 
     /** The velocity of the car. */
-    public final Vector3 velocity;
+    public final Vec3 velocity;
+
+    public final Vec3 angularVelocity;
 
     /** The orientation of the car */
     public final CarOrientation orientation;
@@ -44,13 +46,14 @@ public class CarData {
     public final float elapsedSeconds;
 
     public CarData(rlbot.flat.PlayerInfo playerInfo, float elapsedSeconds) {
-        this.position = new Vector3(playerInfo.physics().location());
-        this.velocity = new Vector3(playerInfo.physics().velocity());
+        this.position = new Vec3(playerInfo.physics().location());
+        this.velocity = new Vec3(playerInfo.physics().velocity());
         this.orientation = CarOrientation.fromFlatbuffer(playerInfo);
         this.boost = playerInfo.boost();
         this.isSupersonic = playerInfo.isSupersonic();
         this.team = playerInfo.team();
         this.hasWheelContact = playerInfo.hasWheelContact();
+        this.angularVelocity = new Vec3(playerInfo.physics().angularVelocity());
         this.elapsedSeconds = elapsedSeconds;
     }
 }

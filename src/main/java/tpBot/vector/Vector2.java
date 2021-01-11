@@ -1,4 +1,4 @@
-package rlbotexample.vector;
+package tpBot.vector;
 
 /**
  * A vector that only knows about x and y components.

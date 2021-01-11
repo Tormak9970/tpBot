@@ -1,7 +1,7 @@
-package rlbotexample;
+package tpBot;
 
 import rlbot.manager.BotManager;
-import rlbotexample.util.PortReader;
+import tpBot.util.PortReader;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -14,9 +14,9 @@ import java.util.stream.Collectors;
 /**
  * See JavaAgent.py for usage instructions.
  *
- * Look inside SampleBot.java for the actual bot logic!
+ * Look inside TpBot.java for the actual bot logic!
  */
-public class JavaExample {
+public class TpBotMain {
 
     private static final int DEFAULT_PORT = 17357;
 
@@ -52,7 +52,7 @@ public class JavaExample {
         panel.add(dataPanel, BorderLayout.CENTER);
         frame.add(panel);
 
-        URL url = JavaExample.class.getClassLoader().getResource("icon.png");
+        URL url = TpBotMain.class.getClassLoader().getResource("icon.png");
         Image image = Toolkit.getDefaultToolkit().createImage(url);
         panel.add(new JLabel(new ImageIcon(image)), BorderLayout.WEST);
         frame.setIconImage(image);

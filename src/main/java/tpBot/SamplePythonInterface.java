@@ -1,4 +1,4 @@
-package rlbotexample;
+package tpBot;
 
 import rlbot.Bot;
 import rlbot.manager.BotManager;
@@ -12,6 +12,6 @@ public class SamplePythonInterface extends SocketServer {
 
     @Override
     protected Bot initBot(int index, String botType, int team) {
-        return new SampleBot(index);
+        return new TpBot(index);
     }
 }

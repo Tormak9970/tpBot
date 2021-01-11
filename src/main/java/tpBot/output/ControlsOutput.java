@@ -1,13 +1,8 @@
-package rlbotexample.output;
+package tpBot.output;
 
 import rlbot.ControllerState;
 
-/**
- * A helper class for returning controls for your bot.
- *
- * This class is here for your convenience, it is NOT part of the framework. You can change it as much
- * as you want, or delete it.
- */
+
 public class ControlsOutput implements ControllerState {
 
     // 0 is straight, -1 is hard left, 1 is hard right.
@@ -33,28 +28,28 @@ public class ControlsOutput implements ControllerState {
     public ControlsOutput() {
     }
 
-    public ControlsOutput withSteer(float steer) {
-        this.steer = clamp(steer);
+    public ControlsOutput withSteer(double steer) {
+        this.steer = (float) clamp(steer);
         return this;
     }
 
-    public ControlsOutput withPitch(float pitch) {
-        this.pitch = clamp(pitch);
+    public ControlsOutput withPitch(double pitch) {
+        this.pitch = (float) clamp(pitch);
         return this;
     }
 
-    public ControlsOutput withYaw(float yaw) {
-        this.yaw = clamp(yaw);
+    public ControlsOutput withYaw(double yaw) {
+        this.yaw = (float) clamp(yaw);
         return this;
     }
 
-    public ControlsOutput withRoll(float roll) {
-        this.roll = clamp(roll);
+    public ControlsOutput withRoll(double roll) {
+        this.roll = (float) clamp(roll);
         return this;
     }
 
-    public ControlsOutput withThrottle(float throttle) {
-        this.throttle = clamp(throttle);
+    public ControlsOutput withThrottle(double throttle) {
+        this.throttle = (float) clamp(throttle);
         return this;
     }
 
@@ -98,7 +93,7 @@ public class ControlsOutput implements ControllerState {
         return this;
     }
 
-    private float clamp(float value) {
+    private double clamp(double value) {
         return Math.max(-1, Math.min(1, value));
     }
 

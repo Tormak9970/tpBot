@@ -1,7 +1,7 @@
-package rlbotexample.boost;
+package tpBot.boost;
 
 
-import rlbotexample.vector.Vector3;
+import tpBot.vector.Vec3;
 
 /**
  * Representation of one of the boost pads on the field.
@@ -11,11 +11,11 @@ import rlbotexample.vector.Vector3;
  */
 public class BoostPad {
 
-    private final Vector3 location;
+    private final Vec3 location;
     private final boolean isFullBoost;
     private boolean isActive;
 
-    public BoostPad(Vector3 location, boolean isFullBoost) {
+    public BoostPad(Vec3 location, boolean isFullBoost) {
         this.location = location;
         this.isFullBoost = isFullBoost;
     }
@@ -24,7 +24,7 @@ public class BoostPad {
         isActive = active;
     }
 
-    public Vector3 getLocation() {
+    public Vec3 getLocation() {
         return location;
     }
 
